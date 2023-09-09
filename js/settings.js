@@ -77,7 +77,6 @@ let bgLoopOff = document.querySelector(".ch-bg .off");
 let randomBg = () => {
   imgsCount < imgsLength ? imgsCount++ : (imgsCount = 1);
   home.style.backgroundImage = `url(../imgs/0${imgsCount}.jpg)`;
-  console.log(`../imgs/0${imgsCount}.jpg`);
 };
 let bgLoopID = setInterval(randomBg, 2000);
 
