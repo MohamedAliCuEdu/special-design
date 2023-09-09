@@ -62,14 +62,13 @@ colorInputs.forEach((color) => {
 // [3] add active class && and remove it from others
 activeBtn(colorInputs);
 //_________________________
-// ===> [3] change landing page random: <===
+// ===> [3] change landing page bg random: <===
 
 let home = document.querySelector(".home");
 let bgBtns = document.querySelectorAll(".ch-bg button");
 
 let imgsLength = 5;
 let imgsCount = 1;
-
 
 let bgLoopOn = document.querySelector(".ch-bg .on");
 let bgLoopOff = document.querySelector(".ch-bg .off");
@@ -78,6 +77,7 @@ let bgLoopOff = document.querySelector(".ch-bg .off");
 let randomBg = () => {
   imgsCount < imgsLength ? imgsCount++ : (imgsCount = 1);
   home.style.backgroundImage = `url(../imgs/0${imgsCount}.jpg)`;
+  console.log(`../imgs/0${imgsCount}.jpg`);
 };
 let bgLoopID = setInterval(randomBg, 2000);
 
@@ -85,9 +85,7 @@ let bgLoopID = setInterval(randomBg, 2000);
 if (localStorage.getItem("bg_option")) {
   let bg_option = localStorage.getItem("bg_option");
 
-  bg_option === "on"
-    ? (bgLoopID)
-    : clearInterval(bgLoopID);
+  bg_option === "on" ? bgLoopID : clearInterval(bgLoopID);
 
   bgBtns.forEach((btn) => {
     btn.className === bg_option
