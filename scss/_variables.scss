@@ -1,0 +1,16 @@
+// colors
+$txt-fc: #666;
+$section-bg: #ffffff;
+$section-alt-bg: #eeeeee;
+
+$orange : #FF9800;
+$red : #E91E63;
+$blue : #03A9F4;
+$green : #009688;
+$alt-green : #4CAF50;
+
+:root{
+  --main-color: #FF9800;
+}
+
+$main-color: var(--main-color);

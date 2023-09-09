@@ -1,0 +1,165 @@
+@use "variables.scss" as *;
+@use "mixins.scss" as *;
+
+// start: container for different screens
+@media (min-width: 576px) { /* Small Devices => Landscape Phones */
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) { /* Medium Devices => Tablets */
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) { /* Desktops */
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) { /* Large Screens */
+  .container {
+    max-width: 1140px;
+  }
+}
+// end: container for different screens
+// start: nav
+@media (max-width: 992px) {
+  nav .container {
+    position: relative;
+    .links .toggle-menu {
+      display: block;
+      &::before{
+        bottom: 500px;
+      }
+    }
+    .links{
+      ul {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        background-color: #ffffff;
+        padding: 5px 0;
+        border: 1px solid #eee;
+        border-radius: 4px;
+        position: absolute;
+        top: -500px;
+        left: 0;
+        overflow: hidden;
+        transition: 0.9s;
+        li {
+          transition: 0s;
+          a {
+            display: block;
+            color: $main-color;
+            font-weight: bold;
+            padding: 8px 15px;
+          }
+          &:hover {
+            background-color: $main-color;
+            a {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+      &.open{
+        ul{
+          top: calc(100% + 18px);
+        }
+        .toggle-menu::before{
+          bottom: -20px;
+        }
+      }
+    }
+  }
+}
+// end: nav
+// start: home
+@media (max-width: 768px) {
+  .home .intro-txt {
+    h1 {
+      font-size: 26px !important;
+    }
+  }
+}
+// end: home
+// start: about
+@media (max-width: 768px) {
+  .about .container {
+    flex-direction: column;
+    .about-txt {
+      text-align: center;
+      padding: 20px;
+    }
+  }
+}
+// end: about
+// start: skills
+@media (max-width: 768px) {
+  .skills {
+    .skill {
+      flex-direction: column;
+      h4 {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+// end: skills
+// start: timeline
+@media (max-width: 768px) {
+  .timeline .timeline-content .content .event {
+    width: 100%;
+    margin: 0 0 20px;
+    &::before, &::after{
+      display: none;
+    }
+  }
+}
+// end: timeline
+// start: gallery
+@media (max-width: 520px){
+  .gallery .container .imgs-box img{
+    width: 190px;
+  }
+}
+@media (max-width: 450px){
+  .gallery .container .imgs-box img{
+    width: 140px;
+  }
+}
+// end: gallery
+// start: testmonials
+@media (max-width: 992px){
+  .testmonials .container{
+    padding: 0 15px;
+  }
+}
+@media (max-width: 768px){
+  .testimonials .container{
+    padding: 0 35px;
+    h1{
+      text-align: center;
+    }
+    .content{
+      display: block;
+      .client{
+        margin: 0 0 10px;
+      }
+    }
+  }
+}
+// end: testmonials
+// start: contact
+@media (max-width: 768px){
+  .contact .container form .inputs{
+    flex-direction: column;
+    gap: 0;
+    & > div{
+      width: 100%;
+    }
+  }
+}
+// end: contact

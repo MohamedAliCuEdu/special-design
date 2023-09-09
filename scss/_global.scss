@@ -1,0 +1,61 @@
+@use "./variables" as *;
+@use "./mixins.scss" as *;
+
+// reset elements:
+* {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 0.3s;
+  scroll-behavior: smooth;
+}
+body {
+  scroll-behavior: smooth;
+  position: relative;
+}
+a {
+  text-decoration: none;
+}
+button {
+  border: none;
+}
+button,
+a,
+input,
+textarea {
+  cursor: pointer;
+}
+ul,
+li {
+  list-style-type: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+label {
+  text-transform: capitalize;
+}
+
+// container and add screen width:
+.container {
+  padding: 0 35px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+// section:
+section {
+  padding: 50px 0;
+  position: relative;
+}
+// section - heading:
+.center-heading {
+  color: $main-color;
+  text-align: center;
+  margin: 0 0 50px;
+}

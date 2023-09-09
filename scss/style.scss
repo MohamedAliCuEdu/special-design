@@ -1,0 +1,526 @@
+@forward "./global.scss";
+@use "./variables" as *;
+@use "./mixins.scss" as *;
+
+// start: nav
+nav {
+  width: 100%;
+  padding: 25px;
+  z-index: 3;
+  position: absolute;
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    .logo {
+      color: #ffffff;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+    .links {
+      ul {
+        display: flex;
+        gap: 20px;
+        li {
+          a {
+            color: #ffffff;
+            text-transform: capitalize;
+            &:hover {
+              color: $main-color;
+            }
+          }
+        }
+      }
+      .toggle-menu {
+        display: none;
+        @include toggle-menu(28px, 4px, 4px, #ffffff);
+        &::before {
+          @include ele-arrow(bottom, 10px, #ffffff);
+          bottom: 500px;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: 0.9s;
+        }
+      }
+    }
+  }
+}
+// end: nav
+// start: home:
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("../imgs/01.jpg");
+  background-size: cover;
+  padding: 0;
+  position: relative;
+  transition: 0.3s;
+  &::before {
+    @include ele-overlay(rgb(0 0 0 / 60%));
+  }
+  .intro-txt {
+    color: white;
+    text-align: center;
+    margin: 0 40px;
+    z-index: 2;
+    h1 {
+      font-size: 32px;
+      margin: 0 0 12px;
+      span {
+        color: $main-color;
+      }
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  }
+}
+// end: home:
+// start: setting-box
+.setting-box {
+  width: 200px;
+  height: 100%;
+  background-color: #ffffff;
+  text-transform: capitalize;
+  padding: 10px;
+  border: 1px solid #eee;
+  position: fixed;
+  left: -200px;
+  z-index: 999;
+  &.open {
+    left: 0;
+  }
+  .sh-settings {
+    @include icon-inbox(30px, 30px, inherit, black);
+    position: absolute;
+    border: 1px solid #eee;
+    border-left-color: transparent;
+    top: 100px;
+    right: -30px;
+  }
+  .set {
+    width: 100%;
+    background-color: #eeeeee;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    h3 {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    button {
+      @include btn(4px, 15px, $orange, #ffffff, 4px);
+      font-size: 12px;
+      text-transform: capitalize;
+      font-weight: bold;
+      opacity: 0.5;
+      &.active {
+        opacity: 1;
+      }
+    }
+    &.ch-colors {
+      ul {
+        li {
+          @include circle(24px, null);
+          display: inline-block;
+          text-align: center;
+          border: 3px solid #eeeeee;
+          &.active {
+            border-color: #ffffff;
+          }
+          &:first-child {
+            background-color: $orange;
+          }
+          &:nth-child(2) {
+            background-color: $red;
+          }
+          &:nth-child(3) {
+            background-color: $green;
+          }
+          &:nth-child(4) {
+            background-color: $blue;
+          }
+          &:nth-child(5) {
+            background-color: $alt-green;
+          }
+        }
+      }
+    }
+  }
+  .reset {
+    width: 100%;
+    @include btn(10px, 10px, $red, #ffffff, 4px);
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+}
+// end: setting-box
+// start: nav-bullets
+.nav-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  a {
+    @include circle(20px, null);
+    border: 3px solid $main-color;
+    position: relative;
+    span {
+      display: none;
+      width: 120px;
+      color: #ffffff;
+      background-color: $main-color;
+      text-transform: capitalize;
+      text-align: center;
+      padding: 8px 10px;
+      position: absolute;
+      top: -10px;
+      right: calc(100% + 20px);
+      &::before {
+        @include ele-arrow(left, 10px, $main-color);
+        top: 50%;
+        right: -20px;
+        transform: translateY(-50%);
+      }
+    }
+    &:hover span {
+      display: block;
+    }
+  }
+}
+// end: nav-bullets
+// start: about
+.about {
+  background-color: $section-bg;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .about-txt {
+      flex: 1;
+      padding: 30px;
+      h1 {
+        color: $main-color;
+        margin: 0 0 10px;
+      }
+      p {
+        color: $txt-fc;
+        line-height: 1.8;
+      }
+    }
+    .img-box {
+      flex: 1;
+      text-align: center;
+      img {
+        width: 250px;
+      }
+    }
+  }
+}
+// end: about
+// start: skills
+.skills {
+  background-color: $section-alt-bg;
+  .skill {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 0 0 15px;
+    h4 {
+      width: 140px;
+      text-align: center;
+    }
+    .skill-load {
+      @include load(100%, 30px, #f6f6f6, 0%, $main-color);
+      border-radius: 6px;
+      span{
+
+        transition: 1.5s;
+      }
+    }
+  }
+}
+// end:skills
+// start: gallery
+.gallery {
+  background-color: $section-bg;
+  .imgs-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    img {
+      width: 200px;
+      background-color: #f6f6f6;
+      padding: 3px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+  }
+}
+// start: popup for imgs
+.popup-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.popup-box {
+  background-color: white;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1001;
+  h3 {
+    color: $main-color;
+    font-weight: normal;
+    margin: 0 0 20px;
+    text-align: center;
+  }
+  span {
+    width: 40px;
+    height: 40px;
+    color: white;
+    background-color: $main-color;
+    font-family: Arial, Tahoma;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    top: -20px;
+    right: -20px;
+  }
+  img {
+    width: 100%;
+  }
+}
+// end: popup for imgs
+// end: gallery
+// start: timeline
+.timeline {
+  background-color: $section-alt-bg;
+  .timeline-content {
+    position: relative;
+    overflow: hidden;
+    &::before {
+      @include ele(2px, 100%, $main-color);
+      left: 50%;
+      transform: translatex(-50%);
+    }
+    .year {
+      color: #ffffff;
+      background-color: $main-color;
+      width: 50px;
+      font-weight: bold;
+      text-align: center;
+      padding: 2px 5px;
+      margin: 20px auto;
+      border-radius: 4px;
+      position: relative;
+      z-index: 2;
+    }
+    .content {
+      display: flex;
+      .event {
+        width: calc(50% - 25px);
+        background-color: #ffffff;
+        padding: 20px;
+        margin: 0 0 40px;
+        position: relative;
+        h3 {
+          color: $main-color;
+          margin: 0 0 10px;
+        }
+        p {
+          color: $txt-fc;
+          line-height: 1.6;
+        }
+      }
+      &.left {
+        .event {
+          &::before {
+            @include ele-arrow("left", 10px, #ffffff);
+            top: 20px;
+            right: -20px;
+          }
+          &::after {
+            @include border-circle(14px, #ffffff, 3px, $main-color);
+            top: 20px;
+            right: -35px;
+          }
+        }
+      }
+      &.right {
+        justify-content: end;
+        .event {
+          &::before {
+            @include ele-arrow("right", 10px, #ffffff);
+            top: 20px;
+            left: -20px;
+          }
+          &::after {
+            @include border-circle(14px, #ffffff, 3px, $main-color);
+            top: 20px;
+            left: -35px;
+          }
+        }
+      }
+    }
+  }
+}
+// end: timeline
+// start: features
+.features {
+  background-color: $section-bg;
+  padding: 80px 0;
+  .content {
+    @include grid-column(300px, 1fr, 20px);
+    .feature {
+      text-align: center;
+      padding: 20px;
+      img {
+        width: 100px;
+      }
+      h3 {
+        font-size: 22px;
+        margin: 15px 0 40px;
+        position: relative;
+        &::before {
+          @include ele(40px, 4px, $main-color);
+          bottom: -20px;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      p {
+        color: $txt-fc;
+        line-height: 1.7;
+      }
+    }
+  }
+}
+// end: features
+// start: testimonials
+.testimonials {
+  padding: 80px 0;
+  background-image: linear-gradient(
+    to right,
+    $main-color 50%,
+    #333 50%,
+    #333 100%
+  );
+  h1 {
+    color: #ffffff;
+    margin: 0 0 30px;
+  }
+  .content {
+    display: flex;
+    gap: 1%;
+    .client {
+      color: $txt-fc;
+      background-color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      p {
+        font-style: italic;
+        text-align: left;
+        line-height: 1.5;
+        margin: 0 0 30px;
+      }
+      .person {
+        text-align: center;
+      }
+      h4 {
+        color: black;
+        margin: 0 0 10px;
+      }
+    }
+  }
+}
+// end: testimonials
+// start: contact
+.contact {
+  min-height: 600px;
+  background-image: url(../imgs/contact.png);
+  background-size: cover;
+  padding: 80px 0;
+  position: relative;
+  &::before {
+    @include ele-overlay(rgba(255, 255, 255, 0.6));
+  }
+  form {
+    max-width: 800px;
+    margin: 0 auto;
+    .inputs {
+      display: flex;
+      gap: 10px;
+      .info,
+      .msg {
+        width: 50%;
+      }
+      input,
+      textarea {
+        width: 100%;
+        background-color: rgba(218, 218, 218, 0.19);
+        padding: 10px;
+        margin: 0 0 15px;
+        border: 1px solid #ccc;
+        outline: none;
+        resize: none;
+        &:focus {
+          outline: 1px solid $main-color;
+        }
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: #777;
+        text-transform: capitalize;
+      }
+      .msg {
+        textarea {
+          display: block;
+          height: 150px;
+          resize: none;
+        }
+        input {
+          width: 100%;
+          color: #ffffff;
+          background-color: $main-color;
+          text-align: center;
+          border: none;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}
+// end: contact
+// start: footer
+footer {
+  background-color: #333;
+  text-align: center;
+  padding: 20px;
+  p {
+    color: #ffffff;
+    text-transform: capitalize;
+  }
+}

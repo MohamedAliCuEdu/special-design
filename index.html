@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <title>Special-design</title>
+</head>
+
+<body>
+  <!-- start: setting-box -->
+  <div class="setting-box">
+    <button class="sh-settings close">
+      <i class="fa fa-gear"></i>
+    </button>
+    <div class="ch-colors set">
+      <h3>colors</h3>
+      <ul class="color-options">
+        <li class="color active" data-color="#FF9800"></li>
+        <li class="color" data-color="#E91E63"></li>
+        <li class="color" data-color="#009688"></li>
+        <li class="color" data-color="#03A9F4"></li>
+        <li class="color" data-color="#4CAF50"></li>
+      </ul>
+    </div>
+    <div class="ch-bg set">
+      <h3>random backgrounds</h3>
+      <button class="on active">yes</button>
+      <button class="off">no</button>
+    </div>
+    <div class="sh-bullets set">
+      <h3>show bullets</h3>
+      <button class="on active">yes</button>
+      <button class="off">no</button>
+    </div>
+    <button class="reset">reset options</button>
+  </div>
+  <!-- end: setting-box -->
+  <!-- end: nav-bullets -->
+  <div class="nav-bullets">
+    <a href="#about" data-section="about us">
+      <span class="tooltip">about us</span>
+    </a>
+    <a href="#skills" data-section="our skills">
+      <span class="tooltip">our skills</span>
+    </a>
+    <a href="#gallery" data-section="our gallery">
+      <span class="tooltip">our gallery</span>
+    </a>
+    <a href="#timeline" data-section="timeline">
+      <span class="tooltip">timeline</span>
+    </a>
+    <a href="#features" data-section="features">
+      <span class="tooltip">features</span>
+    </a>
+    <a href="#testimonials" data-section="testimonials">
+      <span class="tooltip">testimonials</span>
+    </a>
+    <a href="#contact" data-section="contact">
+      <span class="tooltip">contact us</span>
+    </a>
+  </div>
+  <!-- start: nav-bullets -->
+  <!-- start: nav -->
+  <nav>
+    <div class="container">
+      <a href="#home">
+        <h4 class="logo">special design</h5>
+      </a>
+      <div class="links">
+        <ul>
+          <li>
+            <a href="#about">about</a>
+          </li>
+          <li>
+            <a href="#skills">skills</a>
+          </li>
+          <li>
+            <a href="#gallery">gallery</a>
+          </li>
+          <li>
+            <a href="#timeline">timeline</a>
+          </li>
+          <li>
+            <a href="#features">features</a>
+          </li>
+          <li>
+            <a href="#testimonials">testimonials</a>
+          </li>
+        </ul>
+        <button class="toggle-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <!-- end: nav -->
+  <!-- start: home -->
+  <section class="home">
+    <div class="intro-txt">
+      <h1>we are <span>creative</span> agency</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus odit nihil ullam nesciunt quidem iste</p>
+    </div>
+  </section>
+  <!-- end: home -->
+  <!-- start: about-->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-txt">
+        <h1>about us</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ipsum,
+          tenetur dolores esse magni ratione distinctio! Quod iusto neque fuga, maxime quos nostrum quibusdam dicta
+          deserunt blanditiis non voluptate id?</p>
+      </div>
+      <div class="img-box">
+        <img src="./imgs/about-us.jpg" alt="about-img">
+      </div>
+    </div>
+  </section>
+  <!-- end: about-->
+  <!-- start: skills-->
+  <section id="skills" class="skills">
+    <div class="container">
+      <h1 class="center-heading">our skills</h1>
+      <div class="skill">
+        <h4>HTML</h4>
+        <div class="skill-load">
+          <span data-progress="80%"></span>
+        </div>
+      </div>
+      <div class="skill">
+        <h4>CSS</h4>
+        <div class="skill-load">
+          <span data-progress="70%"></span>
+        </div>
+      </div>
+      <div class="skill">
+        <h4>JavaScript</h4>
+        <div class="skill-load">
+          <span data-progress="90%"></span>
+        </div>
+      </div>
+      <div class="skill">
+        <h4>Python</h4>
+        <div class="skill-load">
+          <span data-progress="80%"></span>
+        </div>
+      </div>
+      <div class="skill">
+        <h4>PHP</h4>
+        <div class="skill-load">
+          <span data-progress="90%"></span>
+        </div>
+      </div>
+      <div class="skill">
+        <h4>MySql</h4>
+        <div class="skill-load">
+          <span data-progress="60%"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end: skills-->
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <h1 class="center-heading">our gallery</h1>
+      <div class="imgs-box">
+      </div>
+    </div>
+  </section>
+  <!-- start: -->
+  <section id="timeline" class="timeline">
+    <div class="container">
+      <div class="timeline-content">
+        <div class="year">2018</div>
+        <div class="content left">
+          <div class="event">
+            <h3>testing heading</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Deleniti ex molestiae illo nisi quaerat veniam beatae aliquid eligendi.
+              Aliquid tenetur quas ex, sequi porro nam commodi placeat maxime nobis quam?
+            </p>
+          </div>
+        </div>
+        <div class="content right">
+          <div class="event">
+            <h3>testing heading</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Deleniti ex molestiae illo nisi quaerat veniam beatae aliquid eligendi.
+              Aliquid tenetur quas ex, sequi porro nam commodi placeat maxime nobis quam?
+            </p>
+          </div>
+        </div>
+        <div class="year">2016</div>
+        <div class="content left">
+          <div class="event">
+            <h3>testing heading</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Deleniti ex molestiae illo nisi quaerat veniam beatae aliquid eligendi.
+              Aliquid tenetur quas ex, sequi porro nam commodi placeat maxime nobis quam?
+            </p>
+          </div>
+        </div>
+        <div class="content right">
+          <div class="event">
+            <h3>testing heading</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Deleniti ex molestiae illo nisi quaerat veniam beatae aliquid eligendi.
+              Aliquid tenetur quas ex, sequi porro nam commodi placeat maxime nobis quam?
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end: features-->
+  <section id="features" class="features">
+    <div class="container">
+      <h1 class="center-heading">our features</h1>
+      <div class="content">
+        <div class="feature">
+          <img src="./imgs/programming.svg" alt="programming">
+          <h3>Development</h3>
+          <p>We are professional marketeers, we will do anything you imagine in no time.</p>
+        </div>
+        <div class="feature">
+          <img src="./imgs/advertising.svg" alt="margketing">
+          <h3>marketing</h3>
+          <p>We are professional marketeers, we will do anything you imagine in no time.</p>
+        </div>
+        <div class="feature">
+          <img src="./imgs/hosting-icon.svg" alt="hosting">
+          <h3>hosting</h3>
+          <p>We are professional marketeers, we will do anything you imagine in no time.</p>
+        </div>
+        <div class="feature">
+          <img src="./imgs/mobile-app.svg" alt="mobile-develope">
+          <h3>mobile development</h3>
+          <p>We are professional marketeers, we will do anything you imagine in no time.</p>
+        </div>
+        <div class="feature">
+          <img src="./imgs/graphic-design.svg" alt="clouding">
+          <h3>cloud and servers</h3>
+          <p>We are professional marketeers, we will do anything you imagine in no time.</p>
+        </div>
+        <div class="feature">
+          <img src="./imgs/web-design.svg" alt="seo">
+          <h3>seo</h3>
+          <p>We are professional marketeers, we will do anything you imagine in no time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end: features-->
+  <!-- start: testimonials-->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h1>testimonials</h1>
+      <div class="content">
+        <div class="client">
+          <p>Iam very happy with the product its amazing and i recieve it very fast and the price was amazing.</p>
+          <h4 class="person">ahmed mosaad</h4>
+          <div class="role">CEO At Company</div>
+        </div>
+        <div class="client">
+          <p>Iam very happy with the product its amazing and i recieve it very fast and the price was amazing.</p>
+          <h4 class="person">mohamed ibrahim</h4>
+          <div class="role">CEO At Company</div>
+        </div>
+        <div class="client">
+          <p>Iam very happy with the product its amazing and i recieve it very fast and the price was amazing.</p>
+          <h4 class="person">sherif ashraf</h4>
+          <div class="role">CEO At Company</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end: testimonials-->
+  <!-- start: contact-->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h1 class="center-heading">
+        contact us
+      </h1>
+      <form>
+        <div class="inputs">
+          <div class="info">
+            <input type="text" name="name" placeholder="your name">
+            <input type="text" name="phone" placeholder="your Phone">
+            <input type="email" name="email" placeholder="your email">
+            <input type="subject" name="subject" placeholder="subject">
+          </div>
+          <div class="msg">
+            <textarea name="message" placeholder="your message"></textarea>
+            <input type="submit" value="send">
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- end: contact-->
+  <!-- start: footer-->
+  <footer>
+    <p>created with love by osama elzero</p>
+  </footer>
+  <!-- end: footer-->
+  <script src="js/page.js" type="module"></script>
+  <script src="js/settings.js" type="module"></script>
+</body>
+
+</html>
